@@ -37,7 +37,7 @@ func main() {
 	RunGridActor(ctx, GridModel{
 		MaxX:        rows,
 		MaxY:        cols,
-		Concurrency: cols * rows, // in this case, the number of concurrent goroutines are up to Number of columns
+		Concurrency: rows,
 	}, nextTick)
 
 	<-done
