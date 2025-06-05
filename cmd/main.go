@@ -33,11 +33,11 @@ func main() {
 		cancel()
 	}()
 
-	nextTick := ScheduleTicks(ctx, time.Millisecond*100)
+	nextTick := ScheduleTicks(ctx, time.Millisecond*500)
 	RunGridActor(ctx, GridModel{
 		MaxX:        rows,
 		MaxY:        cols,
-		Concurrency: rows,
+		Concurrency: cols,
 	}, nextTick)
 
 	<-done

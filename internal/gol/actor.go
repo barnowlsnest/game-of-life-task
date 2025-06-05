@@ -56,7 +56,7 @@ func RunGridActor(ctx context.Context, model GridModel, nextTick <-chan struct{}
 					return
 				default:
 					state.Print()
-					state = NewGridState(model, nextGeneration(*state, model.MaxY)) // every goroutine uses the same copy of prev state
+					state = NewGridState(model, nextGeneration(*state, model.Concurrency)) // every goroutine uses the same copy of prev state
 				}
 			}
 		}
